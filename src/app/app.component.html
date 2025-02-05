@@ -1,0 +1,43 @@
+<header class="custom-navbar">
+  <a href="#" class="logo"><i class="ri-verified-badge-line"></i><span>EVALUACIÓN</span></a>
+  <ul class="navbar">
+    <li><a href="#" class="active">INICIO</a></li>
+    <li><a href="#">EJEMPLO 1</a></li>
+    <li><a href="#">EJEMPLO 2</a></li>
+    <li><a href="#">EJEMPLO 3</a></li>
+    <li><a href="#">EJEMPLO 4</a></li>
+    <li><a href="#">EJEMPLO 5</a></li>
+    <li><a href="#">EJERCICIO</a></li>
+  </ul>
+  <div class="main">
+    <div class="bx bx-menu" id="menu-icon"></div>
+  </div>
+</header>
+
+<main>
+  <div style="margin: 20px;">
+    <h1>Ejemplo Formularios Reactivos</h1>
+    <h2>Lista de tareas</h2>
+
+    <div class="col-sm-2">Tarea:
+      <input type="text" class="form-control" [formControl]="tarea" />
+    </div>
+    <p>
+      <button type="button" class="btn btn-primary" (click)="agregarTarea()">Agregar</button>
+    </p>
+
+    <ol>
+      @for (tar of listaTareas; track $index) {
+        <li>
+          {{ tar }} <a (click)="borrarTarea($index)" href="#">¿Borrar?</a>
+        </li>
+      }
+    </ol>
+
+    <p>
+      <button type="button" class="btn btn-danger" (click)="borrarTareas()">Borrar todas</button>
+    </p>
+  </div>
+</main>
+
+<router-outlet></router-outlet>
